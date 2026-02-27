@@ -10,6 +10,14 @@ Add these dev dependencies:
 pnpm add -D husky prettier lint-staged
 ```
 
+If the project does not already use TypeScript, also install it and initialize config:
+
+```bash
+pnpm add -D typescript && pnpm exec tsc --init
+```
+
+Set `noEmit` to true in `tsconfig.json`. If your project has no TypeScript files, add a placeholder `src/index.ts`.
+
 ## 2. Prettier Configuration
 
 Create `.prettierrc.yml`:
@@ -66,7 +74,11 @@ Make it executable: `chmod +x .husky/pre-commit`
 
 Run: `pnpm prepare`
 
-## 7. Commit message
+## 7. gitignore
+
+make sure to add `node_modules/` to your `.gitignore` file to avoid committing these directories.
+
+## 8. Commit message
 
 Commit should be done by user, not by AI. but this is the suggested commit message:
 
